@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class Area{
+    double length;
+    double breadth;
+    void setDim(double length, double breadth){
+        this.length=length;
+        this.breadth = breadth;
+    }
+    double getArea(){
+        return length*breadth;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter the length :");
+        double length = sc.nextDouble();
+        System.out.print("Enter the breadth :");
+        double breadth = sc.nextDouble();
+        Area rect=new Area();
+        rect.setDim(length, breadth);
+        double area = rect.getArea();
+        System.out.println("Area of the reactangle is "+ area);
+    }
+}
