@@ -1,0 +1,29 @@
+public class Car {
+    String model;
+    int year;
+    double price;
+    double mileage;
+    public Car(String model, int year, double price, double mileage) {
+        this.model = model;
+        this.year = year;
+        this.price = price;
+        this.mileage = mileage;
+    }
+    public void displayCarDetails() {
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Price: $" + price);
+        System.out.println("Mileage: " + mileage + " miles per gallon");
+    }
+
+    public static void main(String[] args) {
+        Car car1 = new Car("Toyota Camry", 2020, 25000.0, 30.5);
+        Car car2 = new Car("Honda Civic", 2021, 22000.0, 32.0);
+
+        System.out.println("Car 1 Details:");
+        car1.displayCarDetails();
+
+        System.out.println("\nCar 2 Details:");
+        car2.displayCarDetails();
+    }
+}
