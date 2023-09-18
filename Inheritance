@@ -1,0 +1,37 @@
+import java.util.Scanner;
+class calc{
+    double add(double a, double b){
+        return a+b;
+    }
+    double diff(double a, double b){
+        return a-b;
+    }
+}
+class advcalc extends calc{
+    double multi(double a , double b){
+        return a*b;
+    }
+    double div(double a, double b){
+        return a/b;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    advcalc obj=new advcalc();
+	    Scanner sc=new Scanner (System.in);
+	    System.out.println("Enter the first number :");
+	    int a=sc.nextInt();
+	    System.out.println("Enter the second number :");
+	    int b=sc.nextInt();
+	   double sum=obj.add(a,b);
+	   double diff=obj.diff(a,b);
+	   double multi=obj.multi(a,b);
+	   double div=obj.div(a,b);
+	    
+		System.out.println(sum);
+		System.out.println(diff);
+		System.out.println(multi);
+		System.out.println(div);
+	}
+}
