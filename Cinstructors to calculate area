@@ -1,0 +1,73 @@
+import java.util.*;
+class Rectangle{
+    private float RectangleLength;
+    private float RectangleBreadth;
+    
+    public  Rectangle(float length, float breadth){
+        this.RectangleLength=length;
+        this.RectangleBreadth=breadth;
+    }
+    public float GetArea(){
+        return RectangleLength*RectangleBreadth;
+    }
+}
+class Square{
+    private float SquareLength;
+    
+    public  Square(float length){
+        this.SquareLength=length;
+        
+    }
+       public float GetArea(){ 
+        return SquareLength*SquareLength;
+    }
+}
+class Circle{
+    private float CircleRadius;
+    
+    public Circle(float radius){
+        this.CircleRadius=radius;
+    }
+    public float GetArea(){
+        return (22*CircleRadius*CircleRadius)/7;
+    }
+}
+
+public class Main
+{
+    public static void main(String[] args) {
+    Scanner sc= new Scanner(System.in);
+    System.out.println("1.Rectangle\n2.Square\n3.Circle");
+    System.out.print("Enter the choice of the shape : ");
+    int a=sc.nextInt();
+    switch (a){
+    case 1:
+       
+     System.out.print("Enter the length of the Rectangle :") ;
+     int l=sc.nextInt();
+     System.out.print("Enter the breadth of the Rectangle :");
+     int b=sc.nextInt();
+      Rectangle rect=new Rectangle(l,b);
+    float res=rect.GetArea();
+         System.out.println("The arae of the rectangle is "+res);
+         break;
+         case 2:
+        
+     System.out.print("Enter the length of the Square :")  ;
+     int x=sc.nextInt();
+     
+     Square sq=new Square(x);
+    float square=sq.GetArea();
+         System.out.println("The area of the Square is "+square);
+         break;
+         case 3:
+        
+        System.out.print("Enter the Radius of the Circle :")  ;
+     int r=sc.nextInt();
+     Circle cr=new Circle(r);
+         float circle=cr.GetArea();
+         System.out.println("The area of the Circle is "+circle);
+         break;
+	}
+    }
+}
