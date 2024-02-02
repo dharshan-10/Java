@@ -1,0 +1,38 @@
+
+import java.util.ArrayList;
+
+public class graphRepresentation {
+    public static void main(String[] args) {
+        graphRepresentation obj = new graphRepresentation(5);
+        obj.addList(0, 1);
+        obj.addList(2, 3);
+        obj.addList(3, 4);
+        obj.addList(0, 4);
+        obj.addList(1, 2);
+        obj.addList(4, 1);
+        obj.printNOdes();
+    }
+
+    ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+
+    graphRepresentation(int n) {
+        for (int i = 0; i < n; i++) {
+            list.add(new ArrayList<Integer>());
+        }
+    }
+
+    public void addList(int v, int e) {
+        list.get(v).add(e);
+        list.get(e).add(v);
+    }
+
+    public void printNOdes() {
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println("Element at list Index " + i);
+            for (int j = 0; j < list.get(i).size(); j++) {
+                System.out.println(list.get(i).get(j));
+            }
+        }
+    }
+
+}
