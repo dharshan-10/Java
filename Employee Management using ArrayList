@@ -1,0 +1,98 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        EmployeeManagement management = new EmployeeManagement();
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("Enter the choice :");
+            System.out.println("1. Add Employee");
+            System.out.println("2. Remove Employee");
+            System.out.println("3. Display Employees");
+            System.out.println("4. Exit");
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    management.AddEmployee();
+                    break;
+                case 2:
+                    management.remove();
+                    break;
+                case 3:
+                    management.show();
+                    break;
+                case 4:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid Choice");
+                    break;
+            }
+        }
+    }
+}
+
+class Employee {
+
+    int Id;
+    String Name;
+    String Position;
+    int salary;
+
+    public Employee(String name, String position, int salary) {
+        this.Id = (int) (Math.random() * 100);
+        this.Name = name;
+        this.Position = position;
+        this.salary = salary;
+    }
+
+}
+
+class EmployeeManagement {
+    Scanner sc = new Scanner(System.in);
+
+    List<Employee> list = new ArrayList<>();
+
+    public void AddEmployee() {
+        System.out.println("Enter the Employee Name :");
+        String Name = sc.nextLine();
+
+        System.out.println("Enter the Employee Position :");
+        String position = sc.nextLine();
+
+        System.out.println("Enter the Employee Salary :");
+        int salary = sc.nextInt();
+        sc.nextLine();
+        list.add(new Employee(Name, position, salary));
+    }
+
+    public void remove() {
+        System.out.println("Enter the Employee ID to remove :");
+
+        int id = sc.nextInt();
+
+        for (Employee employee : list) {
+            if (employee.Id == id) {
+                System.out.println("Removed the Employee :" + employee.Name);
+                list.remove(employee);
+                break;
+            } else
+                System.out.println("Employee ID not found");
+        }
+
+    }
+
+    public void show() {
+        for (Employee employee : list) {
+            System.out.println("Employee ID :" + employee.Id);
+            System.out.println("Employee Name:" + employee.Name);
+            System.out.println("Employee Position :" + employee.Position);
+            System.out.println("Employee Salary :" + employee.salary);
+            System.out.println();
+        }
+    }
+
+}
